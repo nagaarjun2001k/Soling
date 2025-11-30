@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soling — Professional Tamil & English Translation Services</title>
+  <meta name="description" content="Fast, accurate Tamil-English translations for schools, businesses, and creators. Subtitles, educational materials, and creative content.">
+  <style>
+    :root {
+      --accent: #0B5FFF;
+      --accent2: #00BFA6;
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --muted: #666666;
+      --light: #f7fbff;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: linear-gradient(180deg, var(--light) 0%, var(--bg) 100%);
+    }
+    
+    header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 24px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+    
+    .logo-container {
+      width: 80px;
+      height: 80px;
+    }
+    
+    .logo-svg {
+      width: 100%;
+      height: 100%;
+    }
+    
+    .header-text h1 {
+      font-size: 28px;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+    
+    .header-text .tagline {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    
+    .header-contact {
+      margin-left: auto;
+      text-align: right;
+    }
+    
+    .header-contact .phone {
+      font-weight: 700;
+      color: var(--accent);
+      font-size: 18px;
+    }
+    
+    .header-contact .email {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    
+    .hero {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    
+    @media (min-width: 900px) {
+      .grid {
+        grid-template-columns: 2fr 1fr;
+      }
+    }
+    
+    .card {
+      background: var(--bg);
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 8px 24px rgba(10, 20, 40, 0.08);
+    }
+    
+    h2 {
+      font-size: 32px;
+      margin-bottom: 16px;
+      color: var(--accent);
+    }
+    
+    h3 {
+      font-size: 22px;
+      margin-top: 24px;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+    
+    .intro-text {
+      color: var(--muted);
+      font-size: 18px;
+      margin-bottom: 24px;
+    }
+    
+    .service-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 20px 0;
+    }
+    
+    .service-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px;
+      background: var(--light);
+      border-radius: 8px;
+      transition: transform 0.2s;
+    }
+    
+    .service-item:hover {
+      transform: translateX(4px);
+    }
+    
+    .service-icon {
+      width: 24px;
+      height: 24px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    
+    .process-steps {
+      counter-reset: step;
+      list-style: none;
+      margin: 20px 0;
+    }
+    
+    .process-steps li {
+      counter-increment: step;
+      padding: 12px 0 12px 48px;
+      position: relative;
+      color: var(--muted);
+    }
+    
+    .process-steps li::before {
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.2s, box-shadow 0.2s;
+      margin-top: 16px;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: white;
+      box-shadow: 0 4px 12px rgba(11, 95, 255, 0.3);
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(11, 95, 255, 0.4);
+    }
+    
+    .pricing-table {
+      width: 100%;
+      margin: 20px 0;
+    }
+    
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid #e6e6e6;
+    }
+    
+    .price-label {
+      color: var(--text);
+    }
+    
+    .price-value {
+      font-weight: 700;
+      color: var(--accent);
+    }
+    
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(11, 95, 255, 0.1), rgba(0, 191, 166, 0.1));
+      padding: 20px;
+      border-radius: 12px;
+      border-left: 4px solid var(--accent);
+      margin: 20px 0;
+    }
+    
+    form {
+      margin-top: 20px;
+    }
+    
+    .form-group {
+      margin-bottom: 16px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: var(--text);
+    }
+    
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: 2px solid #e6e6e6;
+      font-family: inherit;
+      font-size: 14px;
+      transition: border-color 0.2s;
+    }
+    
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+    
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    
+    footer {
+      padding: 32px 20px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 60px;
+      border-top: 1px solid #e6e6e6;
+    }
+    
+    .whatsapp-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 60px;
+      height: 60px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+      cursor: pointer;
+      transition: transform 0.2s;
+      z-index: 1000;
+    }
+    
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+    
+    .whatsapp-icon {
+      color: white;
+      font-size: 32px;
+      font-weight: 700;
+    }
+    
+    @media (max-width: 768px) {
+      header {
+        justify-content: center;
+        text-align: center;
+      }
+      
+      .header-contact {
+        margin-left: 0;
+        text-align: center;
+        width: 100%;
+      }
+      
+      h2 {
+        font-size: 24px;
+      }
+      
+      .card {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <svg class="logo-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#0B5FFF"/>
+            <stop offset="100%" style="stop-color:#00BFA6"/>
+          </linearGradient>
+        </defs>
+        <circle cx="200" cy="200" r="180" fill="url(#g)"/>
+        <text x="200" y="280" font-family="Segoe UI, Roboto" font-size="200" font-weight="700" fill="#fff" text-anchor="middle">S</text>
+      </svg>
+    </div>
+    <div class="header-text">
+      <h1>Soling</h1>
+      <div class="tagline">Professional Tamil & English Translation</div>
+    </div>
+    <div class="header-contact">
+      <div class="phone">📞 +91-97868-43093</div>
+      <div class="email">✉️ contact@soling.in</div>
+    </div>
+  </header>
+
+  <main class="hero">
+    <div class="grid">
+      <div class="card">
+        <h2>We translate for schools, creators & businesses</h2>
+        <p class="intro-text">Fast, accurate Tamil ↔ English translations with cultural sensitivity and context awareness. Serving educational institutions, content creators, and businesses across Tamil Nadu and India.</p>
+
+        <div class="service-list">
+          <div class="service-item">
+            <div class="service-icon">✓</div>
+            <div><strong>Tamil ↔ English Translation</strong> — Documents, books, articles</div>
+          </div>
+          <div class="service-item">
+            <div class="service-icon">✓</div>
+            <div><strong>Subtitles & Captions</strong> — YouTube, films, e-learning (SRT format)</div>
+          </div>
+          <div class="service-item">
+            <div class="service-icon">✓</div>
+            <div><strong>Educational Content</strong> — Textbooks, worksheets, study materials</div>
+          </div>
+          <div class="service-item">
+            <div class="service-icon">✓</div>
+            <div><strong>Website & App Localization</strong> — UI/UX text, marketing copy</div>
+          </div>
+          <div class="service-item">
+            <div class="service-icon">✓</div>
+            <div><strong>Creative Translations</strong> — Scripts, plays, storytelling content</div>
+          </div>
+          <div class="service-item">
+            <div class="service-icon">✓</div>
+            <div><strong>Business Documents</strong> — Resumes, letters, proposals</div>
+          </div>
+        </div>
+
+        <h3>How It Works</h3>
+        <ol class="process-steps">
+          <li>Share your document or paste text via WhatsApp or email</li>
+          <li>Receive detailed quote within 24 hours</li>
+          <li>Approve and pay 50% advance to begin</li>
+          <li>Get your translation in requested format (DOCX/PDF/SRT)</li>
+          <li>One free revision included for your peace of mind</li>
+        </ol>
+
+        <div class="highlight-box">
+          <strong>Quality Guarantee:</strong> All translations undergo bilingual QA checks and are reviewed for context, tone, and cultural appropriateness. Confidentiality assured.
+        </div>
+
+        <a class="btn btn-primary" href="#contact">Request Free Sample & Quote</a>
+      </div>
+
+      <aside>
+        <div class="card">
+          <h3>Pricing Guide</h3>
+          <div class="pricing-table">
+            <div class="price-row">
+              <span class="price-label">Translation (per word)</span>
+              <span class="price-value">₹1.50</span>
+            </div>
+            <div class="price-row">
+              <span class="price-label">Proofreading only</span>
+              <span class="price-value">₹0.80</span>
+            </div>
+            <div class="price-row">
+              <span class="price-label">Document (per page)</span>
+              <span class="price-value">₹200</span>
+            </div>
+            <div class="price-row">
+              <span class="price-label">Subtitling (per min)</span>
+              <span class="price-value">₹55-75</span>
+            </div>
+          </div>
+          <p style="color: var(--muted); font-size: 13px; margin-top: 12px;">Minimum order: ₹300. Rush delivery (+30%) available. Bulk discounts for institutions.</p>
+        </div>
+
+        <div class="card" style="margin-top: 24px;">
+          <h3>Why Choose Soling?</h3>
+          <ul style="color: var(--muted); padding-left: 20px;">
+            <li style="margin: 8px 0;">Background in education & filmmaking</li>
+            <li style="margin: 8px 0;">3-4 day standard turnaround</li>
+            <li style="margin: 8px 0;">Context-aware, not literal translation</li>
+            <li style="margin: 8px 0;">Secure file handling & NDA available</li>
+            <li style="margin: 8px 0;">Vetted network for 10+ Indian languages</li>
+          </ul>
+        </div>
+
+        <div class="card" id="contact" style="margin-top: 24px;">
+          <h3>Get a Free Quote</h3>
+          <form>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="your@email.com" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone / WhatsApp</label>
+              <input type="tel" id="phone" name="phone" placeholder="+91-97868-43093">
+            </div>
+            <div class="form-group">
+              <label for="details">Project Details</label>
+              <textarea id="details" name="details" placeholder="Describe your translation needs (word count, language pair, deadline)"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%; cursor: pointer; border: none; font-size: 16px;">Submit Request</button>
+          </form>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <p><strong>Soling Translation Services</strong></p>
+    <p>Founded by Naga Arjun | Based in Tamil Nadu, India</p>
+    <p style="margin-top: 12px;">Phone: +91-97868-43093 | Email: contact@soling.in</p>
+    <p style="margin-top: 8px; font-size: 12px;">&copy; 2024 Soling. All rights reserved.</p>
+  </footer>
+
+  <a href="https://wa.me/919786843093?text=Hi%20Soling%2C%20I%20need%20translation%20services" target="_blank" class="whatsapp-float" title="Chat on WhatsApp">
+    <span class="whatsapp-icon">💬</span>
+  </a>
+
+  <script>
+    document.querySelector('form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const details = document.getElementById('details').value;
+      
+      const message = `New Quote Request from ${name}%0A%0AEmail: ${email}%0APhone: ${phone}%0A%0ADetails: ${details}`;
+      const whatsappUrl = `https://wa.me/919786843093?text=${message}`;
+      
+      window.open(whatsappUrl, '_blank');
+    });
+  </script>
+</body>
+  </html>
